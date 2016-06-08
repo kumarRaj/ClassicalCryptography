@@ -20,17 +20,17 @@ var createDecipherAtBashSubstitute = function (substitutues) {
 	});
 	return decipherSubstitutes;
 }
+var atBash = {};
+atBash.substitutues = createAtBashSubstitutes();
 
-var encipher = function (plainText, substitutues) {
+atBash.encipher = function (plainText) {
 	return (plainText.split('').map(function (char) {
-		return substitutues[char];
+		return atBash.substitutues[char];
 	})).join('');
 }
 
-var decipher = function (cipherText, substitutues) {
-	return encipher(cipherText, createDecipherAtBashSubstitute(substitutues));
+atBash.decipher = function (cipherText) {
+	return encipher(cipherText, createDecipherAtBashSubstitute(atBash.substitutues));
 }
 
-sout(createAtBashSubstitutes())
-sout(encipher('attack at dawn', createAtBashSubstitutes()));
-sout(decipher('zggzxp zg wzdm', createAtBashSubstitutes()));
+module.exports = atBash;
