@@ -1,0 +1,29 @@
+{
+  "name": "crypt",
+  "description": "Implementations of cryptography",
+  "version": "1.0.0",
+  "main": "atbash.js",
+  "dependencies": {
+  },
+  "devDependencies": {
+    "mocha": "^2.5.3",
+    "chai": "^3.5.0"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kumarRaj/ClassicalCryptography.git"
+  },
+  "keywords": [
+    "crypt",
+    "cipher"
+  ],
+  "author": "Raj",
+  "license": "GNU",
+  "bugs": {
+    "url": "https://github.com/kumarRaj/ClassicalCryptography/issues"
+  },
+  "homepage": "https://github.com/kumarRaj/ClassicalCryptography#readme"
+}

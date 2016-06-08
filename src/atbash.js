@@ -31,5 +31,6 @@ var decipher = function (cipherText, substitutues) {
 	return encipher(cipherText, createDecipherAtBashSubstitute(substitutues));
 }
 
+sout(createAtBashSubstitutes())
 sout(encipher('attack at dawn', createAtBashSubstitutes()));
 sout(decipher('zggzxp zg wzdm', createAtBashSubstitutes()));
