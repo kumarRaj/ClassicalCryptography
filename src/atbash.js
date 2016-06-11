@@ -1,36 +1,36 @@
 var sout = console.log;
-var start = 'a'.charCodeAt(0);
-var end = 'z'.charCodeAt(0);
 
 var createAtBashSubstitutes = function () {
-	var substitutues = {' ':' '};
-	for (i = start,j = end;i <=  end,j >= start;i++,j--){
+	var start = 'a'.charCodeAt(0);
+	var end = 'z'.charCodeAt(0);
+	var substitutes = {' ':' '};
+	for (var i = start,j = end;i <=  end,j >= start;i++,j--){
 		var key = String.fromCharCode(i);
 		var value = String.fromCharCode(j);
-		substitutues[key] = value;
+		substitutes[key] = value;
 	}
-	return substitutues;
+	return substitutes;
 }
 
-var createDecipherAtBashSubstitute = function (substitutues) {
+var createDecipherAtBashSubstitute = function (substitutes) {
 	var decipherSubstitutes = {};
-	var keys = Object.keys(substitutues);
+	var keys = Object.keys(substitutes);
 	keys.forEach(function (key) {
-		decipherSubstitutes[substitutues[key]] = key;
+		decipherSubstitutes[substitutes[key]] = key;
 	});
 	return decipherSubstitutes;
 }
 var atBash = {};
-atBash.substitutues = createAtBashSubstitutes();
+atBash.substitutes = createAtBashSubstitutes();
 
 atBash.encipher = function (plainText) {
 	return (plainText.split('').map(function (char) {
-		return atBash.substitutues[char];
+		return atBash.substitutes[char];
 	})).join('');
 }
 
 atBash.decipher = function (cipherText) {
-	return encipher(cipherText, createDecipherAtBashSubstitute(atBash.substitutues));
+	return encipher(cipherText, createDecipherAtBashSubstitute(atBash.substitutes));
 }
 
 module.exports = atBash;
