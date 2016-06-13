@@ -7,6 +7,7 @@ describe('rot13',function() {
     var expected = 'r';
     assert.equal(expected, rot13.createSubstitute()['e']);
 	});
+	
 	it('substitute',function(){
     var expected = 'n';
     assert.equal(expected, rot13.createSubstitute()['a']);
